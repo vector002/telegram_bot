@@ -11,8 +11,8 @@ def send_welcome(message):
 def tarjima_qilish(message):
     msj = message.text
     if msj.isascii():
-        javob = to_cyrillic(msj)
+        javob =kirill_to_lotin(msj)
     else:
-        javob =to_latin(msj)
+        javob =lotin_to_kirill(msj)
     bot.reply_to(message,javob)
 bot.infinity_polling()
