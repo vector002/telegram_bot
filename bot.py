@@ -10,6 +10,9 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 def tarjima_qilish(message):
     msj = message.text
-    javob = lambda msj : to_cyrillic(msj) if msj.isascii() else to_latin(msj)
-    bot.reply_to(message,javob(msj))
+    if msj.isascii():
+        javob = to_cyrillic(msj)
+    else:
+        javob =to_latin(msj)
+    bot.reply_to(message,javob)
 bot.infinity_polling()
